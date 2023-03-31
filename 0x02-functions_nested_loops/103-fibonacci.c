@@ -1,26 +1,31 @@
 #include <stdio.h>
+
 /**
-  * main - print the first 50 fibonacci numbers.
-  * Return: Nothing.
-  */
+ * main - entry point
+ * description - print the sum of the even value in the range
+ * of first fibonacci numbers before 4000000
+ * Return: Always 0 (success)
+ */
+
 int main(void)
 {
-	unsigned long count, i, j, k;
+	long int a;
+	long int b;
+	long int c;
+	long int sum;
 
-	i = 0;
-	j = 1;
-	for (count = 0; count < 50; count++)
+	a = 1;
+	b = 2;
+	sum = 0;
+	while (a <= 3524578)
 	{
-		k = i + j;
-		i = j;
-		j = k;
-		printf("%lu", k);
-		if (count == 49)
-			putchar('\n');
-		else
-		{
-			printf(", ");
-		}
+		if (a % 2 == 0)
+			sum += a;
+		c = a + b;
+		a = b;
+		b = c;
 	}
+	printf("%ld\n", sum);
 	return (0);
 }
+
